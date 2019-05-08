@@ -1,0 +1,15 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+
+
+.contain {
+object-fit: contain;
+}
+
+.imageContainer{
+
+	margin: 50px auto;
+	border-radius: 10px;
+}

@@ -1,0 +1,101 @@
+<style>
+  body{
+    color:black;
+    font: italic;
+    font-size: ;
+  }
+/*Website header */
+  .header {
+    background-color: rgb(159, 162, 162);
+    text-align: left;
+    padding: 12px;
+  }
+  /* Style the top navigation bar */
+  .topnav {
+    overflow: hidden;
+    background-color: rgb(13,34,52);
+  }
+  /* Style the topnav links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 4px 16px;
+    text-decoration: none;
+  }
+
+  /* Header for the month*/
+  .month {
+    padding:25px 25px;
+    width:auto;
+    background-color: ;
+    text-align: center;
+  }
+  /*trying to make a table*/
+  #calendar td, #calendar th {
+    border: 1px solid #ddd;
+    padding: 80px;
+    margin-right:20px;
+  }
+  #calendar tr:nth-child(even){background-color: ;}
+  #calendar tr:hover {background-color: #ddd;}
+  #calendar th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(159, 162, 162);
+    color: white;
+  }
+
+  a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+
+}
+
+  /**/
+</style>
+<div class="container custom-container-2" *ngIf="isAuthenticated">
+  <!-- Show it when there is no even -->
+  <div class="no-data text-center" *ngIf="int.length == 0" align = "right">
+    <h3>All Empty!</h3>
+  </div>
+  <!-- event list table, it hides when there is no event -->
+  <div *ngIf="int.length !== 0" align = "center">
+    <h3 class="mb-3 text-center"></h3>
+
+    <div class="col-md-12" >
+      <table class="table table-bordered" style="display: inline-block; float:center;">
+        <thead>
+        <tr>
+
+        </tr>
+        </thead>
+        <div class = "scrollable">
+          <tbody>
+          <tr *ngFor="let int of int">
+            <td> Alter {{int}}</td>
+            <td><a href="http://localhost:4200/home/reserve?room={{int}}" class="button">Book Me</a></td>
+
+          </tr>
+          </tbody>
+        </div>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf = "!isAuthenticated" align = "center">
+  <br />
+  <p>Hold up there partner</p>
+  <br />
+  <p>You must have not been cool enough to <a href="http://localhost:4200">login</a>!</p>
+</div>
+
